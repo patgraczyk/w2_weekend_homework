@@ -21,13 +21,15 @@ def test_add_song_to_room
   assert_equal(1, @room1.songs_in_room.length)
 end
 
-# def test_checkin_guest_from_room
-#   assert_equal(1, @number_of_guests.length)
-# end
-# #
-# def test_checkout_guest_from_room
-#   assert_equal(0, @number_of_guests.length)
-# end
+def test_checkin_guest_from_room
+  @room1.check_in_guest_room(@guest1)
+  assert_equal(1, @room1.number_of_guests.length)
+end
+
+def test_checkout_guest_from_room
+  @room1.check_out_guest_room(@guest1)
+  assert_equal(0, @room1.number_of_guests.length)
+end
 
 
 
