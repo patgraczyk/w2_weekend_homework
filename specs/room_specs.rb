@@ -49,7 +49,6 @@ def test_guest_can_afford_to_enter
   @room1.can_afford_to_enter(@guest1)
   assert_equal(15, @guest1.money)
 end
-#
 
 def test_guest_canont_afford_to_enter
   actual =@room1.cannot_afford_to_enter(@guest2)
@@ -70,6 +69,9 @@ def test_room_no_space
   assert_equal("not enough space", actual)
 end
 
-
+def test_favourite_song_on_songlist
+  actual = @room1.favourite_song_on_list(@guest1.favourite_song, @songlist)
+  assert_equal("woohoo", actual)
+end
 
 end #end of class

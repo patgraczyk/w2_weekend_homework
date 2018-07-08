@@ -41,4 +41,12 @@ def room_no_space(guest)
   else return "go in!"
 end
 
+def favourite_song_on_list(guest_song, songlist)
+  for song in songlist
+    if guest_song == song
+  end
+  return "woohoo"
+end
+end
+
 end
