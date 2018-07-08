@@ -13,11 +13,11 @@ def setup
   @song1 = Song.new("Under the sea")
   @song2 = Song.new("Be a Man")
   @song3 = Song.new("How far I'll go")
-  # @songlist = [@song1 + @song2 + @song3]
-  @guest1 = Guest.new("Walt Disney", 20)
-  @guest2 = Guest.new("Molly Kind", 4)
-  @guest3 = Guest.new("John Smith", 6)
-  @guest4 = Guest.new("Freddie Jim", 10)
+  @songlist = [@song1, @song2, @song3]
+  @guest1 = Guest.new("Walt Disney", 20, "Under the sea")
+  @guest2 = Guest.new("Molly Kind", 4, "How far I'll go")
+  @guest3 = Guest.new("John Smith", 6, "Be a Man")
+  @guest4 = Guest.new("Freddie Jim", 10, "Colors of the wind")
   @guests = [@guest1, @guest2, @guest3, @guest4]
 end
 
@@ -69,5 +69,7 @@ def test_room_no_space
   actual = @room2.room_no_space(@guests.count)
   assert_equal("not enough space", actual)
 end
+
+
 
 end #end of class
