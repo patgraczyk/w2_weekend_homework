@@ -17,12 +17,19 @@ def check_in_guest_room(guest)
   @number_of_guests << guest
 end
 #
+
 def check_out_guest_room(guest)
   @number_of_guests.delete(guest)
 end
 
 def can_afford_to_enter(guest)
   guest.money -= @price
- end
+end
+
+def cannot_afford_to_enter(guest)
+  if guest.money < @price
+    return "access denied"
+  end
+end
 
 end

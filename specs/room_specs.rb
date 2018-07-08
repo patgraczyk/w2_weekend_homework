@@ -14,6 +14,7 @@ def setup
   @song3 = Song.new("How far I'll go")
   # @songlist = [@song1 + @song2 + @song3]
   @guest1 = Guest.new("Walt Disney", 20)
+  @guest2 = Guest.new("Walt Disney", 4)
 end
 
 def test_add_song_to_room
@@ -45,6 +46,12 @@ def test_guest_can_afford_to_enter
   assert_equal(15, @guest1.money)
 end
 #
+
+def test_guest_canont_afford_to_enter
+  actual =@room1.cannot_afford_to_enter(@guest2)
+  assert_equal("access denied", actual)
+end
+
 # def test_room_capacity
 # end
 #
