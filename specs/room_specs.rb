@@ -13,7 +13,7 @@ def setup
   @song1 = Song.new("Under the sea")
   @song2 = Song.new("Be a Man")
   @song3 = Song.new("How far I'll go")
-  @songlist = [@song1, @song2, @song3]
+  # @songlist = [@song1, @song2, @song3]
   @guest1 = Guest.new("Walt Disney", 20, "Under the sea")
   @guest2 = Guest.new("Molly Kind", 4, "How far I'll go")
   @guest3 = Guest.new("John Smith", 6, "Be a Man")
@@ -70,7 +70,7 @@ def test_room_no_space
 end
 
 def test_favourite_song_on_songlist
-  actual = @room1.favourite_song_list(@guest1.favourite_song, @songlist)
+  actual = @room1.favourite_song_list(@guest1.favourite_song)
   assert_equal("woohoo", actual)
 end
 

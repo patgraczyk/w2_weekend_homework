@@ -43,20 +43,8 @@ end
 
 
 # # HALF WORKING ONE
-def favourite_song_list(guest_song, songlist)
-  for song in songlist
-    if guest_song == song
-      return "wohoo"
-  end
-end
-else
-    return "song not found"
-end
-
-
-# def favourite_song_list(guest_song)
-#   fav_songs = []
-#   for song in @songs_in_room
+# def favourite_song_list(guest_song, songlist)
+#   for song in songlist
 #     if guest_song == song
 #       return "wohoo"
 #   end
@@ -64,6 +52,18 @@ end
 # else
 #     return "song not found"
 # end
+
+
+# def favourite_song_list(guest_song)
+fav_songs = []
+  for song in @songs_in_room
+    if guest_song == song
+      return "wohoo"
+  end
+end
+else
+    return "song not found"
+end
 
 
 
