@@ -54,15 +54,16 @@ end
 # end
 
 
-# def favourite_song_list(guest_song)
+def favourite_song_list(current_playlist, guest_song)
+@songs_in_room << current_playlist
 fav_songs = []
-  for song in @songs_in_room
+  for song in @songs_in_room #use enumaration!
     if guest_song == song
       return "wohoo"
   end
 end
-else
-    return "song not found"
+# else
+#     return "song not found"
 end
 
 
