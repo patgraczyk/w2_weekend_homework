@@ -59,19 +59,25 @@ def test_room_capacity
   assert_equal(10, @room1.capacity)
 end
 #
-def test_room_space
-  actual = @room1.room_no_space(@guests.count)
+def test_room_has_space
+  actual = @room1.room_space(@guests.count)
   assert_equal("go in!", actual)
 end
 
 def test_room_no_space
-  actual = @room2.room_no_space(@guests.count)
+  actual = @room2.room_space(@guests.count)
   assert_equal("not enough space", actual)
 end
 
 def test_favourite_song_on_songlist
-  actual = @room1.favourite_song_on_list(@guest1.favourite_song, @songlist)
+  actual = @room1.favourite_song_list(@guest1.favourite_song, @songlist)
   assert_equal("woohoo", actual)
 end
+
+def test_favourite_song_not_on_songlist
+  actual = @room1.favourite_song_list(@guest4.favourite_song, @songlist)
+  assert_equal("song not found", actual)
+end
+
 
 end #end of class

@@ -8,7 +8,7 @@ def initialize(name, price, capacity)
   @number_of_guests = []
   @songs_in_room = []
   @capacity = capacity
-  @waiting_room =[]
+  # @waiting_room =[]
 end
 
 def add_song_to_room(song)
@@ -34,19 +34,65 @@ def cannot_afford_to_enter(guest)
   end
 end
 
-def room_no_space(guest)
+def room_space(guest)
   if @capacity < guest
     return "not enough space"
   end
   else return "go in!"
 end
 
-def favourite_song_on_list(guest_song, songlist)
+
+# # HALF WORKING ONE
+def favourite_song_list(guest_song, songlist)
   for song in songlist
     if guest_song == song
+      return "wohoo"
   end
-  return "woohoo"
 end
+else
+    return "song not found"
 end
 
-end
+
+# def favourite_song_list(guest_song)
+#   fav_songs = []
+#   for song in @songs_in_room
+#     if guest_song == song
+#       return "wohoo"
+#   end
+# end
+# else
+#     return "song not found"
+# end
+
+# def favourite_song_list(guest_song, songlist)
+# def playlist_contains_favourite_song?(guest)
+#   array_of_song_titles = []
+#   for each_song in @playlist
+#     array_of_song_titles << each_song.name
+#   end
+#   return array_of_song_titles.include?(guest.favourite_song.name)
+# end
+#def favourite_song_list(guest_song, songlist)
+
+# def favourite_song_list(guest_song, songlist)
+#   fav_song = []
+#   for song in songlist
+#     if guest_song == song
+#       fav_song << song
+#   end
+# end
+#   if fav_song == guest_song
+#     return "woohoo"
+#   else
+#   if fav_song != guest_song
+#     return "song not found"
+#   end
+# end
+# end
+
+
+
+
+
+end #end of class
