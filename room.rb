@@ -65,15 +65,7 @@ end
 #     return "song not found"
 # end
 
-# def favourite_song_list(guest_song, songlist)
-# def playlist_contains_favourite_song?(guest)
-#   array_of_song_titles = []
-#   for each_song in @playlist
-#     array_of_song_titles << each_song.name
-#   end
-#   return array_of_song_titles.include?(guest.favourite_song.name)
-# end
-#def favourite_song_list(guest_song, songlist)
+
 
 # def favourite_song_list(guest_song, songlist)
 #   fav_song = []
