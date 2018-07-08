@@ -8,13 +8,17 @@ require_relative('../guest.rb')
 class RoomTest < MiniTest::Test
 
 def setup
-  @room1 = Room.new("Disney Room", 5)
+  @room1 = Room.new("Disney Room", 5, 10)
+  @room2 = Room.new("Small Room", 5, 3)
   @song1 = Song.new("Under the sea")
   @song2 = Song.new("Be a Man")
   @song3 = Song.new("How far I'll go")
   # @songlist = [@song1 + @song2 + @song3]
   @guest1 = Guest.new("Walt Disney", 20)
-  @guest2 = Guest.new("Walt Disney", 4)
+  @guest2 = Guest.new("Molly Kind", 4)
+  @guest3 = Guest.new("John Smith", 6)
+  @guest4 = Guest.new("Freddie Jim", 10)
+  @guests = [@guest1, @guest2, @guest3, @guest4]
 end
 
 def test_add_song_to_room
@@ -52,10 +56,18 @@ def test_guest_canont_afford_to_enter
   assert_equal("access denied", actual)
 end
 
-# def test_room_capacity
-# end
+def test_room_capacity
+  assert_equal(10, @room1.capacity)
+end
 #
-# def test_room_no_space
-# end
+def test_room_space
+  actual = @room1.room_no_space(@guests.count)
+  assert_equal("go in!", actual)
+end
+
+def test_room_no_space
+  actual = @room2.room_no_space(@guests.count)
+  assert_equal("not enough space", actual)
+end
 
 end #end of class
