@@ -42,47 +42,18 @@ def room_space(guest)
 end
 
 
-# # HALF WORKING ONE
-# def favourite_song_list(guest_song, songlist)
-#   for song in songlist
-#     if guest_song == song
-#       return "wohoo"
-#   end
-# end
-# else
-#     return "song not found"
-# end
-
 
 def favourite_song_list(current_playlist, guest_song)
-@songs_in_room << current_playlist
-fav_songs = []
-  for song in @songs_in_room #use enumaration!
+  for song in current_playlist #use enumaration!
+    puts song
+    puts guest_song
     if guest_song == song
       return "wohoo"
   end
 end
-# else
-#     return "song not found"
+else
+    return "song not found"
 end
-
-
-
-# def favourite_song_list(guest_song, songlist)
-#   fav_song = []
-#   for song in songlist
-#     if guest_song == song
-#       fav_song << song
-#   end
-# end
-#   if fav_song == guest_song
-#     return "woohoo"
-#   else
-#   if fav_song != guest_song
-#     return "song not found"
-#   end
-# end
-# end
 
 
 

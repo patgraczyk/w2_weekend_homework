@@ -71,13 +71,13 @@ end
 
 def test_favourite_song_on_songlist
   actual = @room1.favourite_song_list(@songlist, @guest1.favourite_song)
-  assert_equal("woohoo", actual)
+  assert_equal("wohoo", actual)
 end
 
-# def test_favourite_song_not_on_songlist
-#   actual = @room1.favourite_song_list(@guest4.favourite_song, @songlist)
-#   assert_equal("song not found", actual)
-# end
+def test_favourite_song_not_on_songlist
+  actual = @room1.favourite_song_list(@songlist, @guest4.favourite_song)
+  assert_equal("song not found", actual)
+end
 
 
 end #end of class
